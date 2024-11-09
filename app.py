@@ -1,14 +1,24 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from UI.home_page import content
+# from ui.home_page import content
 from module.code_generator import CodeGenerator
+from starlette.requests import Request
+from fastapi.templating import Jinja2Templates
+
+
+templates = Jinja2Templates(directory="ui")
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-     return HTMLResponse(content=content)
+     # @app.get("/")
+     # async def read_root():
+     #      return HTMLResponse(content=content)
 
 @app.post("/code_generator")
-def generate_code(request):
+async def generate_code(request):
      return CodeGenerator(request)._generate_code()
+
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request):
+    # Here you can pass dynamic data to your template if needed
+    return templates.TemplateResponse("index.html", {"request": request})
