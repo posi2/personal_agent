@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 # from ui.home_page import content
-from module.code_generator import CodeGenerator
+from prajna.code_generator.code_generator import CodeGenerator
 from starlette.requests import Request
 from fastapi.templating import Jinja2Templates
 

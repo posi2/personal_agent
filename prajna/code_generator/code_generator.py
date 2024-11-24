@@ -1,7 +1,7 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
-from module.types import SUMMARY_TEMPLATE
+from prajna.types import SUMMARY_TEMPLATE
 
 class CodeGenerator():
     def __init__(self, request):

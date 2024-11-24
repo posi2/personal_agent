@@ -3,3 +3,5 @@ langchain_openai == 0.2.3
 langchain_ollama == 0.2.0
 fastapi == 0.115.3
 uvicorn == 0.32.0
+python-dotenv == 1.0.1
+pydantic_settings == 2.6.1
